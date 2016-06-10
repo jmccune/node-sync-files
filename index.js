@@ -44,8 +44,8 @@ module.exports = function (source, target, opts, notify) {
   }
 };
 
-function watcherCopy (source, target, opts, notify) {
-  return function (f, stats) {
+function watcherCopy (source, target, opts, notify) {  
+  return function (f, stats) {   
     copy(f, path.join(target, path.relative(source, f)), notify);
   };
 }
@@ -132,7 +132,10 @@ function deleteExtra (fileordir, opts, notify) {
 }
 
 function copy (source, target, notify) {
-  notify("copy", [source, target]);
+  if (source.endsWith('xml')) {
+      return true;
+  }
+  notify("copy", [source, target]);  
   try {
     fs.copySync(source, target);
     return true;

@@ -25,7 +25,7 @@ var opts = {
   "help": {
     "help": "Show help and exit",
     "delete": "Delete extraneous files from target",
-    "watch": "Watch changes in source and keep target in sync",
+    "watch": "Watch changes in source and keep target in sync XYZ",
     "version": "Show version and exit",
     "verbose": "Moar output",
     "notify-update": "Enable update notification",
